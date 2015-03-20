@@ -6,8 +6,9 @@
         var opc = {
             type: "POST",
             url: url_base + "personas",
-            data: persona,
-            responseType: "json"
+            data: JSON.stringify(persona),
+            responseType: "json",
+            headers: {"content-Type":"application/json"}
 
         };
 

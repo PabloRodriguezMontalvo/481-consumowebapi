@@ -25,6 +25,24 @@
                 update(JSON.parse(res.response));
 
             });
+
+            document.getElementById("btnGua").addEventListener("click",
+                function () {
+
+                    var obj = new Modelo.Persona(
+                        document.getElementById("txtNom").value,
+                        document.getElementById("txtEda").value);
+
+                    Servicio.Add(obj).done(function() {
+
+                        Servicio.Get().done(function(res) {
+
+                            update(JSON.parse(res.response));
+                        });
+                    });
+
+
+                });
         }
     });
 })();
